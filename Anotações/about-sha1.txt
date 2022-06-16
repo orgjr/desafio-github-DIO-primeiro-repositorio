@@ -1,0 +1,13 @@
+		Criptografia sha1, utilizada no git
+
+comando: 
+$ openssl sha1 exemplo.txt
+
+	No exemplo acima, o comando é executado no diretório que contém o arquivo (./exemplo.txt). Após a execução do comando, o arquivo exemplo.txt recebe um código de criptografia que é o sha1. Esse código muda se o documento receber qualquer alteração, mas se o arquivo retornar para uma versão anterior, a chave gerada naquela versão anterior permanece a mesma, sem alteração, o que garante que as versões sejam reconhecidas, de acordo com o código de encriptação.
+
+	Exemplo: 
+arquivo /home/sdh/exemplo.txt original - b47ef75f0c6a33a54ee7445145ffa5d7d347c0f5 (chave gerada pelo comando openssl sha1)
+arquivo ~/exemplo.txt modificado - 616dc7af0f09da84f783165c766f2ed1be3fe66f
+arquivo ~/exemplo.txt com a modificação removida, de volta à versão inicial - 
+b47ef75f0c6a33a54ee7445145ffa5d7d347c0f5
+Obs: no arquivo final foi utilizada a mesma chave do primeiro exemplo. Dessa forma é possível que seja identificada a versão do programa através da chave gerada, pois se houver qualquer alteração do conteúdo, haverá alteração do código sha1.

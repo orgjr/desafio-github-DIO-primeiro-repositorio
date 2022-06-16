@@ -1,0 +1,37 @@
+		Iniciando o git e criando um commit
+
+	Os três comandos à seguir, são enfatizados na aula:
+
+$ git init 
+$ git add
+$ git commit 
+
+	Para inicializar o serviço git, o professor cria um diretório workspace, em cli utilizando o git bash, no diretório C: no windows e cria outro em C:\workspace\ chamado livro-receitas. Navega até o diretório e roda o comando git init, que cria um diretório .git no destino - C:\workspace\livro-receitas\.git
+
+	Mais comandos utilizados no git: 
+
+$ git status - comando utilizado para verificar o status de repósitório local. O comando retornará um aviso se houver alteração no repositório local, arquivos para serem enviados para stage ou se não houver nenhuma alteração no repositório local, por exemplo.
+
+$ git restore --staged <file> - comando para enviar arquivos encaminhados para stage de volta para untracked
+
+Obs: staged é o status de arquivos que foram encaminhados para que recebam o comando commit, que os disponibilizarão no repositório local para que possam ser encaminhados para um repositório de rede e disponibilizados para acesso da comunidade no github. Untracked significa que o git não tem conhecimento, não foram enviados para o repositório. Tracked significa que já foi encaminhado para o repositório do git pelo comando git add ou git commit.
+
+$ git config --list - comando utilizado para listar as configurações do seu git
+$ git config --global --unset user.email - comando utilizado para remover a configuração de user.email.
+$ git config --global user.email "blablabla@blabla.com" - comando utilizado para definir o seu user.email. 
+OBS: para definir as configurações do usuário git, deve ser utilizado o comando git config com o parâmetro --global, a opção que deseja definir e incluir a informação entre aspas, como no exemplo anterior.
+Para remover uma configuração é utilizado o comando git config --global --unset nomedaopção_que_deseja_remover
+
+	Após definir os arquivos, adicionar ao git com $ git add, em seguida git commit, agora é necessário enviar para um repositório/origem remota. 
+	Primeiro criar um repositório na plataforma: 
+ - clique na foto de perfil e vá até a opção "Your Repositories"
+ - clicar no ícone verde escrito "new"
+ - editar as opções de criação do repositório alterando "Owner", "Repository name", adicione opcionalmente uma descrição em "Description", etc, nessa página vc configura o repositório a ser adicionado.
+- após configurar, criar com "Create repository"
+	Quando o repositório estiver criado, o próprio github fornecerá instruções para apontar o repositório local ao repositório github e o link de acesso do repositório github.
+	Finalmente finalizar o processo com o comando que enviará o repositório local ao repositório do github
+$ git remote add origin https://github.com/usuário/arquivo-completo.git - onde origin é por convenção um nome substituto ao repositório local e o link é o caminho para o repositório remoto do github, informado na tela de criação de repositório. - comando que adicionará o link do repositório ao origin, que "cadastrará" o repositório que será enviado ao github (repositório remoto) 
+OBS: o origin é um "alias", um "apelido", que substituirá o link https, ou seja, não será necessário digitar todo o link. Segundo o professor, poderia ser usado qualquer nome, mas por convenção é utilizado origin. 
+	No passo seguinte, o professor usou "git status" para garantir que não havia pendência no repositório e finalizou o processo com o comando: 
+$ git push origin master 
+	Ao enviar o comando, abriu um popup solicitando uma senha de 2 fatores (configuração de segurança opcional), para confirmar a solicitação. 
