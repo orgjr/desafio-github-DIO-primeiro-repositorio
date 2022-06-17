@@ -3,17 +3,24 @@ $ ssh-keygen -t ed25519 -C orgj@vivaldi.net
  - onde: ed25519 é o nome da criptografia;
  - o tipo de criptografia é o SHA256;
 
-	Após concluir o processo, serão criadas, por padrão em um diretório ~/.ssh (editável), um arquivo com chave ssh pública e outro com chave privada
+	Após concluir o processo, serão criadas, por padrão em um diretório ~/.ssh
+(editável), um arquivo com chave ssh pública e outro com chave privada
 $ cat xxxx.pub (chave pública) 
-	Copiar a informação do arquivo e configurar no perfil do github em settings SSH and GPG keys > SSH keys - definir um apelido para a chave associada à sua conta no campo title e colar a informação completa do arquivo key.pub no campo key.
+	Copiar a informação do arquivo e configurar no perfil do github em
+settings SSH and GPG keys > SSH keys - definir um apelido para a chave associada à 
+sua conta no campo title e colar a informação completa do arquivo key.pub no campo 
+key.
 
-	Para conseguir utilizar a plataforma, é necessário inicializar o ssh-agent.
+	Para conseguir utilizar a plataforma, é necessário inicializar o ssh-
+agent.
 	Novamente na cli, diretório ~/.ssh: 
 $ eval $(ssh-agent -s)
 Agent pid 1382
 
-Obs¹: significa que o processo iniciou e o terminal retorna o nº do processo (pid). O agente deverá receber a chave privada.
-Obs²: a chave pública é configurada na plataforma github e a chave privada é configurada no processo ssh-agent. 
+Obs¹: significa que o processo iniciou e o terminal retorna o nº do processo
+(pid). O agente deverá receber a chave privada.
+Obs²: a chave pública é configurada na plataforma github e a chave privada é
+configurada no processo ssh-agent. 
 	Comando: 
 $ ssh-add ~/.ssh/id_ed25519 
 Enter passphrase for id_ed25519
