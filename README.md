@@ -1,8 +1,8 @@
 # desafio-github-DIO-primeiro-repositorio
 
-##Desafio de projeto sobre Git/GitHub - 
+## Desafio de projeto sobre Git/GitHub - 
 
-###Anotações - iniciando na plataforma
+### Anotações - iniciando na plataforma
 
  - about-sha1.txt
  - conf-chavessh-github.txt
